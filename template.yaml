@@ -20,6 +20,13 @@ Resources:
         - python3.8
       LicenseInfo: https://imagemagick.org/script/license.php
       RetentionPolicy: Retain
+  LayerPermission:
+    Type: AWS::Lambda::LayerVersionPermission
+    Properties:
+      Action: lambda:GetLayerVersion
+      LayerVersionArn: !Ref ImageMagickLayer
+      OrganizationId: o-sv03v2ebdx
+      Principal: "*"
 
 Outputs:
   LayerVersion:
